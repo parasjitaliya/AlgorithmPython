@@ -2,7 +2,8 @@
     do sorting with insertion sort for integer number and string
 """
 import algoritham
-import algoritham
+from utilitylogic import sorting
+obj = sorting()
 n = int(input("enter the num of integers:"))
 arr = []
 for i in range(n):
