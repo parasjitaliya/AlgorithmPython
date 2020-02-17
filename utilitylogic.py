@@ -141,3 +141,22 @@ class sorting:
     def printList(self, arr):
         for i in range(len(arr)):
             print(arr[i])
+
+class generallogic:
+
+    # ----------------------------------vending machine-----------------------------
+    def vending_machine(self, avilable_notes, changing_amount):
+        i = 0
+        total_notes = 0
+        while changing_amount > 0:
+            # value divided by available notes
+            notes = changing_amount // avilable_notes[i]
+            if (notes > 0):
+                # check for notes and print
+                print(f"{notes} notes of {avilable_notes[i]} rupess")
+                # count changing amount
+                changing_amount = changing_amount % avilable_notes[i]
+                total_notes += notes
+            i += 1
+        return total_notes
+
