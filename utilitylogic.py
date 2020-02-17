@@ -168,3 +168,21 @@ class generallogic:
         d0 = (d + x + (31 * m0) // 12) % 7
         print(f"Day of the week is {days[d0]}")
 
+    # ----------------------------monthlypayment logic ------------------------------
+
+
+    def monthly_payment(self, P, Y, R):
+        n = 12 * Y
+        r = R / (12 * 100)
+        payment = P * r / (1 - (1 + r) ** (-n))
+        print(f"Monthly payment you would have to make is = {round(payment, 4)}")
+
+    # ----------------------------logic formula for temperaturConversion ----------------------------
+
+    def conversion_of_temperature(self, choice, temp):
+        if choice == 1:
+            celcius_to_fehrenheit = round((temp * 9 / 5) + 32, 4)
+            print(f"Temperature {temp}C ={celcius_to_fehrenheit}F ")
+        elif choice == 2:
+            fahrenheit_to_celcius = round((temp - 32) * 5 / 9, 4)
+            print(f"Temperature {temp}F ={fahrenheit_to_celcius}C")
