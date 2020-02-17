@@ -55,3 +55,25 @@ class numberlogic:
                     anagrams_list.append(prime_number[start1])
         return anagrams_list
 
+class sorting:
+
+    def __init__(self):
+        self.list = []
+
+    # ---------------------binary search ---------------------------
+
+    def binarysearch(self, list, target):
+        lower = 0
+        upper = len(list) - 1
+        while lower <= upper:
+            mid = ((lower + upper) // 2)
+            if list[mid] == target:
+                globals()['pos'] = mid
+                return True
+            else:
+                if list[mid] < target:
+                    lower = mid + 1
+                else:
+                    upper = mid -1
+        return False
+
