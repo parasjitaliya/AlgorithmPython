@@ -27,3 +27,31 @@ class numberlogic:
             if (flag == 0):
                 prime_numbers_list.append(number)
         return prime_numbers_list
+
+    # ------------------------ pelindrom logic -------------------------
+    def prime_palindrom(self, prime_number):
+        palindroms_list = []
+        for numbers in prime_number:
+            temp = numbers
+            sum = 0
+            while numbers > 0:
+                remainder = numbers % 10
+                sum = sum * 10 + remainder
+                numbers = numbers // 10
+            if (temp == sum):
+                palindroms_list.append(sum)
+        return palindroms_list
+
+    # -----------------------anagram number -------------------------
+
+    def prime_anagram(self, prime_number):
+        anagrams_list = []
+        for start in range(len(prime_number) - 2):
+            for start1 in range(start + 1, len(prime_number) - 1):
+                num1 = str(prime_number[start])
+                num2 = str(prime_number[start1])
+                if sorted(num1) == sorted(num2):
+                    anagrams_list.append(prime_number[start])
+                    anagrams_list.append(prime_number[start1])
+        return anagrams_list
+
