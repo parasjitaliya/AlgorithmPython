@@ -77,3 +77,17 @@ class sorting:
                     upper = mid -1
         return False
 
+    # ------------------- insertion sort ---------------------
+
+    def insertionSort(self, arr):
+        # Traverse through 1 to len(arr)
+        for i in range(1, len(arr)):
+            tmp = arr[i]
+            element = i - 1;
+            while (element > 0 and arr[element] > tmp):
+                arr[element + 1] = arr[element]
+                element = element - 1
+                arr[element + 1] = tmp
+        print("Sorted array is:")
+        for i in range(len(arr)):
+            print(arr[i])
