@@ -91,3 +91,22 @@ class sorting:
         print("Sorted array is:")
         for i in range(len(arr)):
             print(arr[i])
+
+    # ----------------------bubble sort for integer ------------------------------
+
+    def bubbleSort(self, arr):
+        length = len(arr)
+        # Traverse through all array elements
+        for i in range(length - 1):
+            # Last i elements are already in place
+            for element in range(0, length - i - 1):
+                # traverse the array from 0 to n-i-1
+                # Swap if the element found is greater
+                # than the next element
+                if arr[element] > arr[element + 1]:
+                    temp = arr[element + 1]
+                    arr[element + 1] = arr[element]
+                    arr[element] = temp
+        print("Sorted array is:")
+        for i in range(len(arr)):
+            print(arr[i])
