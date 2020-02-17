@@ -110,3 +110,34 @@ class sorting:
         print("Sorted array is:")
         for i in range(len(arr)):
             print(arr[i])
+    # -----------------------------mergesort -----------------------------------------------------------
+    def mergeSort(self, list):
+        if len(list) > 1:
+            mid = len(list) // 2
+            L = list[:mid]
+            R = list[mid:]
+            sorting.mergeSort(self, L)
+            sorting.mergeSort(self, R)
+            i = j = k = 0
+
+            while i < len(L) and j < len(R):
+                if L[i] < R[j]:
+                    list[k] = L[i]
+                    i += 1
+                else:
+                    list[k] = R[j]
+                    j += 1
+                k += 1
+
+            while i < len(L):
+                list[k] = L[i]
+                i += 1
+                k += 1
+            while j < len(R):
+                list[k] = R[j]
+                j += 1
+                k += 1
+
+    def printList(self, arr):
+        for i in range(len(arr)):
+            print(arr[i])
